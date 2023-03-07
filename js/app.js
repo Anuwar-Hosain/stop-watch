@@ -11,9 +11,15 @@ document.getElementById("start").addEventListener("click", function () {
   }, 1000);
   startBtn.setAttribute("disabled", true);
   startBtn.classList += " block";
+  stopBtn.removeAttribute("disabled");
+  stopBtn.classList.remove("block");
+  resetBtn.removeAttribute("disabled");
+  resetBtn.classList.remove("block");
 });
 function stopDisplay() {
   clearInterval(id);
+  stopBtn.setAttribute("disabled", true);
+  stopBtn.classList += " block";
   startBtn.removeAttribute("disabled");
   startBtn.classList.remove("block");
 }
@@ -21,4 +27,10 @@ function reset() {
   sum = 0;
   display.innerHTML = "0";
   clearInterval(id);
+  resetBtn.setAttribute("disabled", true);
+  resetBtn.classList += " block";
+  stopBtn.setAttribute("disabled", true);
+  stopBtn.classList += " block";
+  startBtn.removeAttribute("disabled");
+  startBtn.classList.remove("block");
 }
